@@ -39,6 +39,12 @@ DEPS_DATA = {
         "role_id": 1286882045380792350,
         "send_message_to_user": True
     },
+        "lead": {
+        "category_id": 1300687154284072960 ,
+        "pretty_name": "Leadership Team",
+        "role_id": 1300688484792664075,
+        "send_message_to_user": True
+    },
         "management": {
         "category_id": 1300687105038618746 ,
         "pretty_name": "Management Team",
