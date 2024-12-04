@@ -80,7 +80,7 @@ class sa(commands.Cog, name="SA Main Commands"):
             msg = ctx.message
             msg.content = mes
             
-            await ctx.thread.reply(msg, anonymous = False)
+            await ctx.thread.reply(msg, anonymous = True)
         
         await ctx.channel.edit(category=self.bot.get_channel(data["category_id"]), sync_permissions=True) 
         await ctx.send("<@&%s>" % str(data["role_id"]))
