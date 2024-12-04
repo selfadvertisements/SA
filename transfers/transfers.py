@@ -52,7 +52,7 @@ DEPS_DATA = {
         "send_message_to_user": True
     },
 }
-class SA(commands.Cog, name="SA Main Commands"):
+class sa(commands.Cog, name="SA Main Commands"):
     def __init__(self, bot):
         self.bot = bot
         
@@ -78,7 +78,7 @@ class SA(commands.Cog, name="SA Main Commands"):
             return
 
         if data["send_message_to_user"]:
-            mes = "You are being transferred to the **`"
+            mes = "You are being transferred to **`"
             mes += data["pretty_name"]
             mes += "`**.\n"
             mes += "Please remain __patient__ while we find a suitable staff member to assist in your request.\n\n"
@@ -124,4 +124,4 @@ class SA(commands.Cog, name="SA Main Commands"):
         await ctx.send(ctx.thread.id)
 
 async def setup(bot):
-    await bot.add_cog(SA(bot))
+    await bot.add_cog(sa(bot))
