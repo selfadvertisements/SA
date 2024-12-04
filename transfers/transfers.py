@@ -82,10 +82,6 @@ class sa(commands.Cog, name="SA Main Commands"):
             mes += data["pretty_name"]
             mes += "`**.\n"
             mes += "Please remain __patient__ while we find a suitable staff member to assist in your request.\n\n"
-            
-            if data["reminders"] is not None:
-                mes += "**__Reminders__**\n"
-                mes += data["reminders"]
 
             msg = ctx.message
             msg.content = mes
