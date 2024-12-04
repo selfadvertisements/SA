@@ -6,8 +6,7 @@ from discord.ext import commands
 from core import checks
 from core.models import PermissionLevel
 
-options_menu="You have provided an invalid dept. code.\n> **Usage:** `!transfer [dept. code]`\n\n__**Department Codes:**__\n>>> - **`mod`** - Moderation Team\n- **`pt`** - Partnership Team\n- **`growth`** - Growth Team\n- **`sales`** - Sales Team\n- **`hr`** - Human Resources\n- **`lead`** - Team Leaders\n- **`management`** - Management\n"
-options_menu2="You have provided an invalid dept. code.\n> **Usage:** `!stransfer [dept. code]`\n\n__**Department Codes:**__\n>>> - **`mod`** - Moderation Team\n- **`pt`** - Partnership Team\n- **`growth`** - Growth Team\n- **`sales`** - Sales Team\n- **`hr`** - Human Resources\n- **`lead`** - Team Leaders\n- **`management`** - Management\n"
+options_menu="You have provided an invalid dept. code.\n\n__**Department Codes:**__\n>>> - **`mod`** - Moderation Team\n- **`pt`** - Partnership Team\n- **`growth`** - Growth Team\n- **`sales`** - Sales Team\n- **`hr`** - Human Resources\n- **`lead`** - Team Leaders\n- **`management`** - Management\n"
 
 DEPS_DATA = {
         "mod": {
@@ -106,7 +105,7 @@ class sa(commands.Cog, name="SA Main Commands"):
         try:
             data = DEPS_DATA[to]
         except:
-            embed = discord.Embed(title=f"Silent Transfer",description=options_menu2,
+            embed = discord.Embed(title=f"Silent Transfer",description=options_menu,
                                   color=discord.Color.red(), timestamp=datetime.utcnow())
             await ctx.send(embed=embed)
             return
