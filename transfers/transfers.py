@@ -78,19 +78,15 @@ class sa(commands.Cog, name="SA Main Commands"):
             return
 
         if data["send_message_to_user"]:
-            mes = "You are being transferred to **`"
+            mes = "You are being transferred to the **`"
             mes += data["pretty_name"]
             mes += "`**.\n"
             mes += "Please remain __patient__ while we find a suitable staff member to assist in your request.\n\n"
-            
-            if data["reminders"] is not None:
-                mes += "**__Reminders__**\n"
-                mes += data["reminders"]
 
             msg = ctx.message
             msg.content = mes
             
-            await ctx.thread.reply(msg, anonymous = False)
+            await ctx.thread.reply(msg, anonymous = True)
         
         await ctx.channel.edit(category=self.bot.get_channel(data["category_id"]), sync_permissions=True) 
         await ctx.send("<@&%s>" % str(data["role_id"]))
