@@ -12,42 +12,36 @@ DEPS_DATA = {
         "mod": {
         "category_id": 1300687208013103124 ,
         "pretty_name": "Moderation Team",
-        "reminders": "When reporting a member, please make sure to provide valid proof.",
         "role_id": 1300688996929634386,
         "send_message_to_user": True
     },
         "pt": {
         "category_id": 1300687229399859220 ,
         "pretty_name": "Partnership Team",
-        "reminders": "Please have your advertisement ready to send and ensure you meet our requirements.",
         "role_id": 1300688998099849297,
         "send_message_to_user": True
     },
         "growth": {
         "category_id": 1300687279622193182 ,
         "pretty_name": "Growth Team",
-        "reminders": "None",
         "role_id": 1300689059164979271,
         "send_message_to_user": True
     },
         "sales": {
         "category_id": 1300687297754435684 ,
         "pretty_name": "Sales Team",
-        "reminders": "None",
         "role_id": 1300689059924017162,
         "send_message_to_user": True
     },
         "hr": {
         "category_id": 1300687185426513972 ,
         "pretty_name": "Human Resources Team",
-        "reminders": "If you're looking to report a staff member, please make sure to provide valid proof against this staff member.",
         "role_id": 1286882045380792350,
         "send_message_to_user": True
     },
         "management": {
         "category_id": 1300687105038618746 ,
         "pretty_name": "Management Team",
-        "reminders": "None",
         "role_id": 1300688479297998848,
         "send_message_to_user": True
     },
