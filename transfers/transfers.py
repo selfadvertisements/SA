@@ -61,7 +61,7 @@ class sa(commands.Cog, name="SA Main Commands"):
     @commands.command()
     @checks.thread_only()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
-    async def transfer(self, ctx, *, : str=None):
+    async def transfer(self, ctx, *, to: str=None):
         """Command that transfers thread to other departments."""
         if to is None:
             embed = discord.Embed(title=f"Department Transfer", description=options_menu,
@@ -78,15 +78,19 @@ class sa(commands.Cog, name="SA Main Commands"):
             return
 
         if data["send_message_to_user"]:
-            mes = "You are being transferred to the **`"
+            mes = "You are being transferred to **`"
             mes += data["pretty_name"]
             mes += "`**.\n"
             mes += "Please remain __patient__ while we find a suitable staff member to assist in your request.\n\n"
+            
+            if data["reminders"] is not None:
+                mes += "**__Reminders__**\n"
+                mes += data["reminders"]
 
             msg = ctx.message
             msg.content = mes
             
-            await ctx.thread.reply(msg, anonymous = True)
+            await ctx.thread.reply(msg, anonymous = False)
         
         await ctx.channel.edit(category=self.bot.get_channel(data["category_id"]), sync_permissions=True) 
         await ctx.send("<@&%s>" % str(data["role_id"]))
