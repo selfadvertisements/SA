@@ -78,7 +78,7 @@ class sa(commands.Cog, name="SA Main Commands"):
             return
 
         if data["send_message_to_user"]:
-            mes = "You are being transferred to **`"
+            mes = "You are being transferred to the **`"
             mes += data["pretty_name"]
             mes += "`**.\n"
             mes += "Please remain __patient__ while we find a suitable staff member to assist in your request.\n\n"
