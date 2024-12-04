@@ -6,7 +6,8 @@ from discord.ext import commands
 from core import checks
 from core.models import PermissionLevel
 
-options_menu="You have provided an invalid dept. code.\n> **Usage:** `!transfer [dept. code]`\n\n__**Department Codes:**__\n- **`mod`** - Moderation Team\n- **`pt`** - Partnership Team\n- **`growth`** - Growth Team\n- **`sales`** - Sales Team\n- **`hr`** - Human Resources\n- **`lead`** - Team Leaders\n- **`management`** - Management\n"
+options_menu="You have provided an invalid dept. code.\n> **Usage:** `!transfer [dept. code]`\n\n__**Department Codes:**__\n>>> - **`mod`** - Moderation Team\n- **`pt`** - Partnership Team\n- **`growth`** - Growth Team\n- **`sales`** - Sales Team\n- **`hr`** - Human Resources\n- **`lead`** - Team Leaders\n- **`management`** - Management\n"
+options_menu2="You have provided an invalid dept. code.\n> **Usage:** `!stransfer [dept. code]`\n\n__**Department Codes:**__\n>>> - **`mod`** - Moderation Team\n- **`pt`** - Partnership Team\n- **`growth`** - Growth Team\n- **`sales`** - Sales Team\n- **`hr`** - Human Resources\n- **`lead`** - Team Leaders\n- **`management`** - Management\n"
 
 DEPS_DATA = {
         "mod": {
@@ -37,13 +38,19 @@ DEPS_DATA = {
         "category_id": 1300687185426513972 ,
         "pretty_name": "Human Resources Team",
         "role_id": 1286882045380792350,
-        "send_message_to_user": True
+        "send_message__user": True
+    },
+        "lead": {
+        "category_id": 1300687154284072960 ,
+        "pretty_name": "Leadership Team",
+        "role_id": 1300688484792664075,
+        "send_message__user": True
     },
         "management": {
         "category_id": 1300687105038618746 ,
         "pretty_name": "Management Team",
         "role_id": 1300688479297998848,
-        "send_message_to_user": True
+        "send_message__user": True
     },
 }
 class sa(commands.Cog, name="SA Main Commands"):
@@ -55,7 +62,7 @@ class sa(commands.Cog, name="SA Main Commands"):
     @commands.command()
     @checks.thread_only()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
-    async def transfer(self, ctx, *, to: str=None):
+    async def transfer(self, ctx, *, : str=None):
         """Command that transfers thread to other departments."""
         if to is None:
             embed = discord.Embed(title=f"Department Transfer", description=options_menu,
@@ -99,7 +106,7 @@ class sa(commands.Cog, name="SA Main Commands"):
         try:
             data = DEPS_DATA[to]
         except:
-            embed = discord.Embed(title=f"Silent Transfer",description=options_menu,
+            embed = discord.Embed(title=f"Silent Transfer",description=options_menu2,
                                   color=discord.Color.red(), timestamp=datetime.utcnow())
             await ctx.send(embed=embed)
             return
