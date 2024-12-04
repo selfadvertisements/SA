@@ -52,7 +52,7 @@ DEPS_DATA = {
         "send_message_to_user": True
     },
 }
-class tom(commands.Cog, name="Tom Main Commands"):
+class SA(commands.Cog, name="SA Main Commands"):
     def __init__(self, bot):
         self.bot = bot
         
@@ -124,4 +124,4 @@ class tom(commands.Cog, name="Tom Main Commands"):
         await ctx.send(ctx.thread.id)
 
 async def setup(bot):
-    await bot.add_cog(tom(bot))
+    await bot.add_cog(SA(bot))
